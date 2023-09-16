@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  frontend:
+    tty: true
+    build: ./frontend
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app/
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/app/
+    tty: true
+    stdin_open: true
