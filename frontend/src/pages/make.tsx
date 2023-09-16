@@ -4,6 +4,12 @@ import Head from "next/head";
 import Link from "next/link";
 import QRCode from "react-qr-code";
 import axios from "axios";
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
+    dangerouslyAllowBrowser: true // TODO: fix this
+});
 
 export default function Scan() {
     const [productName, setProductName] = useState('');
@@ -19,7 +25,10 @@ export default function Scan() {
             </Head>
             <main className="flex flex-row min-h-screen justify-center w-full">
                 <div className="flex flex-col gap-5 h-full">
-                    <h2 className="font-bold text-5xl text-center">Make QR Codes</h2>
+                    <h1
+                        className="pl-10 font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                        Make a QR Code.
+                    </h1>
                     <div className="flex flex-col gap-3 justify-center items-center h-full w-full">
                         <div className="flex flex-row gap-2 items-center">
                             <label>Product Name:</label>
@@ -28,16 +37,23 @@ export default function Scan() {
                             }} className="border rounded-lg border-slate-300 px-2 py-1" type="text" placeholder="Enter product name..." />
                         </div>
                         <div className="flex flex-row gap-2 items-center">
-                            <label>Product Number:</label>
+                            <label>Number of Products:</label>
                             <input onChange={(e) => {
                                 setProductNum(e.target.value);
                             }} className="border rounded-lg border-slate-300 px-2 py-1" type="number" placeholder="Enter product amount" />
                         </div>
                         <div className="flex flex-row gap-2 items-center">
                             <label>Description:</label>
-                            <input onChange={(e) => {
+                            <textarea onChange={(e) => {
                                 setDescription(e.target.value);
-                            }} className="border rounded-lg border-slate-300 px-2 py-1" type="textarea" placeholder="Description" />
+                            }} id="description" className="border rounded-lg border-slate-300 px-2 h-full" placeholder="Description"></textarea>
+                            <button className="bg-purple-500 rounded-2xl text-white px-2 py-1" onClick={async (e) => {
+                                 const completion = await openai.chat.completions.create({
+                                    messages: [{ role: 'user', content: `Write a description for ${productName}` }],
+                                    model: 'gpt-3.5-turbo',
+                                  });
+                                  document.getElementById("description").innerText = completion.choices[0].message.content;
+                            }}>Generate</button>
                         </div>
                         <div>
                             <button onClick={async (e) => {
@@ -56,7 +72,13 @@ export default function Scan() {
                     <div className="flex flex-wrap">
                         {productIds.map((item, index) => {
                             return (
-                                <img src={`http://localhost:8080/static/block_${item}_qr.png`} />
+                                <>
+                                    <a href={`http://localhost:8080/static/block_${item}_qr.png`} download>
+                                        <button>
+                                            <img src={`http://localhost:8080/static/block_${item}_qr.png`} />
+                                        </button>
+                                    </a>
+                                </>
                             )
                         })}
                     </div>

@@ -22,7 +22,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             <a href="/" className="font-bold">Home</a>
             <a href="/scan" className="font-bold">Scan</a>
             <a href="/make" className="font-bold">Make</a>
-            <a href="/about" className="font-bold">About</a>
+            <a href="" className="font-bold">About</a>
           </div>
           <div className="w-1/3 flex flex-row gap-4 align-middle justify-end items-center">
             <button className="bg-blue-500 px-5 py-1 rounded-3xl text-white font-bold">Login</button>
@@ -40,7 +40,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
                 <li><a href="/" className="">Home</a></li>
                 <li><a href="/scan" className="">Scan</a></li>
                 <li><a href="/make" className="">Make</a></li>
-                <li><a href="/about" className="">About</a></li>
+                <li><a href="" className="">About</a></li>
               </ul>
             </div>
           </div>

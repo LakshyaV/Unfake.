@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import QRCode from "react-qr-code";
 import { QrReader } from 'react-qr-reader';
+import OpenAI from 'openai';
 import axios from "axios";
 
 export default function Scan() {
@@ -18,8 +19,8 @@ export default function Scan() {
             <main className="justify-center items-center">
                 <diva className="pl-30">
                     <h1
-                        className="font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                        Scan
+                        className="pl-10 font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                            Scan.
                     </h1>
                 </diva>
                 <div className="h-screen flex items-center justify-center">

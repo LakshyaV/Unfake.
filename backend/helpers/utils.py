@@ -56,7 +56,7 @@ class Blockchain:
 
     def add_block(self, product_name):
         previous_block = self.chain[-1]
-        product_id = os.urandom(6).hex()
+        product_id = os.urandom(30).hex()
         new_block = Block(len(self.chain), previous_block.hash, product_name, product_id)
         while new_block.hash[:self.difficulty] != "0" * self.difficulty:
             new_block.nonce += 1
