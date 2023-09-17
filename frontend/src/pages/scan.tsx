@@ -27,7 +27,6 @@ export default function Scan() {
                 <div className="h-screen flex items-center justify-center">
                     <div className="w-1/2 h-full">
                         <QrReader
-                            scanDelay={1000}
                             onResult={async (result, error) => {
                                 if (!!result) {
                                     setData(result?.text);

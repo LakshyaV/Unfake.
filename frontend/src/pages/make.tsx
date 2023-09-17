@@ -8,7 +8,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
     apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
-    dangerouslyAllowBrowser: true // TODO: fix this
+    dangerouslyAllowBrowser: true, // TODO: fix this
 });
 
 export default function Scan() {
@@ -30,7 +30,7 @@ export default function Scan() {
                         className="pl-10 font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                         Make a QR Code.
                     </h1>
-                    <div className="flex flex-col gap-3 justify-center items-center h-full w-full">
+                    <div className="flex flex-col gap-3 justify-start items-center h-full w-full">
                         <div className="flex flex-row gap-2 items-center">
                             <label>Product Name:</label>
                             <input onChange={(e) => {

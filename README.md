@@ -5,13 +5,7 @@
 ## **Table of Contents**
 - [**Introduction**](#introduction)
 - [**Key Features**](#key-features)
-- [**Getting Started**](#getting-started)
 - [**How It Works**](#how-it-works)
-- [**Supported Platforms**](#supported-platforms)
-- [**Installation**](#installation)
-- [**Usage**](#usage)
-- [**Contributing**](#contributing)
-- [**License**](#license)
 
 ## **Introduction**
 
@@ -29,18 +23,6 @@ In today's market, counterfeit products have become increasingly sophisticated, 
 
 - **Product Information**: In addition to authentication, **Unfake** provides essential information about the product, such as manufacturer details and user reviews.
 
-## **Getting Started**
-
-To get started with **Unfake**, follow these simple steps:
-
-1. **Download the Unfake app** from your device's app store (available for iOS and Android).
-
-2. **Sign up or log in** to your **Unfake** account.
-
-3. **Open the app** and grant the necessary permissions, such as camera access for QR code scanning.
-
-4. Start **scanning QR codes** on products to verify their authenticity.
-
 ## **How It Works**
 
 **Unfake** uses advanced algorithms and our extensive product database to determine whether a scanned item is genuine or counterfeit. Here's a brief overview of how the process works:
@@ -52,22 +34,3 @@ To get started with **Unfake**, follow these simple steps:
 3. **Verification Result**: You will receive immediate feedback confirming whether the product is authentic or potentially counterfeit.
 
 4. **Additional Information**: **Unfake** may provide additional information about the product, including details about the manufacturer and user reviews.
-
-## **Supported Platforms**
-
-**Unfake** is available on the following platforms:
-
-- **iOS** (iPhone and iPad)
-- **Android** (Smartphones and Tablets)
-- **Web** (Accessible via popular web browsers)
-
-## **Installation**
-
-### **Mobile App**
-
-- **Download Unfake** from the [Apple App Store](https://apps.apple.com/us/app/unfake/id123456789) for iOS devices.
-- Get **Unfake** on the [Google Play Store](https://play.google.com/store/apps/details?id=com.unfake.app) for Android devices.
-
-### **Web**
-
-- Visit our website at [www.unfake.com](https://www.unfake.com) to access **Unfake** through your
