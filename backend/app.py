@@ -22,6 +22,7 @@ def make():
     print(data)
     productName = data['productName']
     productAmount = data['amount']
+    location = data['location']
     for i in range(productAmount):
         blockchain.add_block(productName)
     
@@ -40,6 +41,7 @@ def make():
 
 @app.route('/scan', methods=['POST'])
 def scan():
+
     data = request.json["data"]
     qr = qrcode.QRCode(
         version=1,
@@ -63,6 +65,4 @@ def scan():
 if __name__ == "__main__":
     # create blockchain
     blockchain = Blockchain()
-    # create genisis block
-    blockchain.create_genesis_block()
     app.run(host='0.0.0.0', port=8080, debug=True)

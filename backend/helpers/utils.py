@@ -27,7 +27,7 @@ class Block:
             box_size=10,
             border=4,
         )
-        text = "The product is real. The product name is " + self.product_name + " The product id is " + self.product_id 
+        text = "The product is real. The product name is " + self.product_name + " The product id is " + self.product_id
         print(text)
         qr.add_data(text)
         qr.make(fit=True)
@@ -67,7 +67,7 @@ class Blockchain:
 #     blockchain = Blockchain()
 
 #     # Add initial block (genesis block)
-#     print("Mining Genesis Block...")
+#     \("Mining Genesis Block...")
 #     blockchain.add_block()
 
 #     num_blocks = int(input("Enter the number of additional blocks to create: "))

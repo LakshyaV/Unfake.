@@ -15,11 +15,12 @@ export default function Scan() {
     const [productName, setProductName] = useState('');
     const [productNum, setProductNum] = useState(0);
     const [description, setDescription] = useState('');
+    const [location, setLocation] = useState('');
     const [productIds, setProductIds] = useState([]);
     return (
         <>
             <Head>
-                <title>Unfaked</title>
+                <title>Unfake</title>
                 <meta name="description" content="codex" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -43,6 +44,12 @@ export default function Scan() {
                             }} className="border rounded-lg border-slate-300 px-2 py-1" type="number" placeholder="Enter product amount" />
                         </div>
                         <div className="flex flex-row gap-2 items-center">
+                            <label>Location:</label>
+                            <input onChange={(e) => {
+                                setLocation(e.target.value);
+                            }} className="border rounded-lg border-slate-300 px-2 py-1" type="text" placeholder="Enter a location." />
+                        </div>
+                        <div className="flex flex-row gap-2 items-center">
                             <label>Description:</label>
                             <textarea onChange={(e) => {
                                 setDescription(e.target.value);
@@ -58,7 +65,7 @@ export default function Scan() {
                         <div>
                             <button onClick={async (e) => {
                                 // productName, productNum
-                                await axios.post("http://localhost:8080/make", { productName: productName, amount: parseInt(productNum) }).then((value) => {
+                                await axios.post("http://localhost:8080/make", { productName: productName, amount: parseInt(productNum), location: location }).then((value) => {
                                     console.log(value.data);
                                     setProductIds(value.data.data.map((item) => {
                                         return item.productId;

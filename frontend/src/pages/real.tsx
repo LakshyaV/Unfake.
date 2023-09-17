@@ -6,7 +6,7 @@ export default function Real() {
     return (
         <>
             <Head>
-                <title>Unfaked</title>
+                <title>Unfake</title>
                 <meta name="description" content="codex" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
