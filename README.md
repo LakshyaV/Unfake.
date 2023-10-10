@@ -1,4 +1,5 @@
 # **Unfake**
+### Developers: Lakshya, Thanson, Aromal
 
 **Unfake** is a versatile website and mobile app designed to assist users in identifying counterfeit versions of products quickly and efficiently. Our intuitive scanning process utilizes QR codes to verify the authenticity of real products, helping you make informed purchasing decisions and avoid falling victim to counterfeit goods.
 
