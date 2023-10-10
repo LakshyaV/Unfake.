@@ -14,7 +14,7 @@ class Block:
         self.product_id = product_id
         self.nonce = 0
         self.hash = self.calculate_hash()
-        self.qr_code_data = self.generate_qr_code_data()  # Generate QR code data for this block
+        self.qr_code_data = self.generate_qr_code_data()  # Generate QR code data for this block.
 
     def calculate_hash(self):
         data = str(self.index) + self.previous_hash + str(self.timestamp) + self.product_name + self.product_id + str(self.nonce)
