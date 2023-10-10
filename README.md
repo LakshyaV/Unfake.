@@ -35,7 +35,7 @@ In today's market, counterfeit products have become increasingly sophisticated, 
 
 4. **Additional Information**: **Unfake** may provide additional information about the product, including details about the manufacturer and user reviews.](https://github.com/LakshyaV/Unfake)](https://github.com/LakshyaV/Unfake)https://github.com/LakshyaV/Unfake
 
-## **How we built it
+## How we built it
 
 With a core focus on safeguarding product authenticity, our system leverages blockchain technology in conjunction with QR code scanning to provide a comprehensive means of verifying product legitimacy. This project includes frontend with React and Tailwind CSS, while the backend includes Python.
 
@@ -51,12 +51,12 @@ A QR code is generated for each authentic product, which encodes critical produc
 The QR code image is created using the qrcode library, and it is saved as an image file (e.g., static/block_{product_id}_qr.png).
 Additionally, the binary data of the QR code is stored within the block as qr_code_data through: qr_byte_io = io.BytesIO()
 
-'''
+```
 img.save(qr_byte_io)
 
 qr_byte_data = qr_byte_io.getvalue()
 Verification Process:
-'''
+```
 
 When a QR code is scanned using our dedicated web application, the verification process begins.
 The application extracts the data encoded within the scanned QR code.
